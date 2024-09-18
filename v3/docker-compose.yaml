@@ -5,10 +5,10 @@ services:
     build:
       dockerfile: Dockerfile
     entrypoint:
-      - ./bin/engine
+      - /usr/local/bin/engine
     environment:
-      - METADATA_PATH
-      - AUTHN_CONFIG_PATH
+      - METADATA_PATH=/app/crates/open-dds/examples/reference.json
+      - AUTHN_CONFIG_PATH=/app/auth_config.json
       - OTLP_ENDPOINT=http://jaeger:4317
     ports:
       # Binding to localhost:3001 avoids conflict with dev_setup
@@ -19,7 +19,7 @@ services:
       auth_hook:
         condition: service_started
     volumes:
-      - ./static/auth/auth_config.json:/app/auth_config.json
+      - ./static/auth/auth_config_v2.json:/app/auth_config.json
       - ./crates/engine/tests/schema.json:/app/crates/engine/tests/schema.json
       - ./crates/open-dds/examples/reference.json:/app/crates/open-dds/examples/reference.json
 
