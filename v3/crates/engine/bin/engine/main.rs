@@ -301,6 +301,19 @@ impl EngineRouter {
 
     fn add_cors_layer(&mut self, allow_origin: &[String]) {
         self.cors_layer = Some(cors::build_cors_layer(allow_origin));
+
+        // let static_origins = vec![
+        //     "http://localhost:8080".to_string(),
+        //     "http://localhost:8102".to_string(),
+        //     "http://example.com".to_string(),
+        // ];
+
+        // let merged_origins: Vec<String> = static_origins
+        //     .into_iter()          // Convert static_origins into an iterator
+        //     .chain(allow_origin.iter().cloned())  // Chain it with allow_origin's cloned values
+        //     .collect();            // Collect the result into a Vec<String>
+
+        // self.cors_layer = Some(cors::build_cors_layer(&merged_origins));
     }
 
     fn into_make_service(self) -> axum::routing::IntoMakeService<Router> {

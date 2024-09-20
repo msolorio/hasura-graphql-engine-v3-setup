@@ -132,7 +132,9 @@
                     "deletable": false,
                     "uniqueness_constraints": {
                       "ArticleByID": {
-                        "unique_columns": ["id"]
+                        "unique_columns": [
+                          "id"
+                        ]
                       }
                     },
                     "foreign_keys": {}
@@ -145,7 +147,9 @@
                     "deletable": false,
                     "uniqueness_constraints": {
                       "AuthorByID": {
-                        "unique_columns": ["id"]
+                        "unique_columns": [
+                          "id"
+                        ]
                       }
                     },
                     "foreign_keys": {}
@@ -245,7 +249,9 @@
                 "type": "String!"
               }
             ],
-            "globalIdFields": ["author_id"],
+            "globalIdFields": [
+              "author_id"
+            ],
             "graphql": {
               "typeName": "Author"
             },
@@ -293,7 +299,9 @@
                 "type": "Int!"
               }
             ],
-            "globalIdFields": ["article_id"],
+            "globalIdFields": [
+              "article_id"
+            ],
             "graphql": {
               "typeName": "Article"
             },
@@ -424,7 +432,9 @@
               "selectUniques": [
                 {
                   "queryRootField": "AuthorByID",
-                  "uniqueIdentifier": ["author_id"]
+                  "uniqueIdentifier": [
+                    "author_id"
+                  ]
                 }
               ],
               "selectMany": {
@@ -470,7 +480,9 @@
               "selectUniques": [
                 {
                   "queryRootField": "ArticleByID",
-                  "uniqueIdentifier": ["article_id"]
+                  "uniqueIdentifier": [
+                    "article_id"
+                  ]
                 }
               ],
               "selectMany": {
@@ -489,7 +501,11 @@
               {
                 "role": "admin",
                 "output": {
-                  "allowedFields": ["author_id", "first_name", "last_name"]
+                  "allowedFields": [
+                    "author_id",
+                    "first_name",
+                    "last_name"
+                  ]
                 }
               }
             ]
@@ -504,13 +520,20 @@
               {
                 "role": "admin",
                 "output": {
-                  "allowedFields": ["article_id", "title", "author_id"]
+                  "allowedFields": [
+                    "article_id",
+                    "title",
+                    "author_id"
+                  ]
                 }
               },
               {
                 "role": "user",
                 "output": {
-                  "allowedFields": ["article_id", "title"]
+                  "allowedFields": [
+                    "article_id",
+                    "title"
+                  ]
                 }
               }
             ]

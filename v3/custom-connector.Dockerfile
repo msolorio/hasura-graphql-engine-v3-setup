@@ -8,8 +8,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN set -ex;\
     apt-get update; \
     apt-get install --no-install-recommends --assume-yes \
-      curl git jq pkg-config ssh \
-      libssl-dev lld protobuf-compiler
+    curl git jq pkg-config ssh \
+    libssl-dev lld protobuf-compiler
 
 # Set up a directory to store Cargo files.
 ENV CARGO_HOME=/app/.cargo
